@@ -28,7 +28,6 @@
     "eslint-plugin-prettier": "^3.4.0",
     "gulp": "^4.0.2",
     "gulp-jsdoc3": "^3.0.0",
-    "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
     "prettier": "^2.2.1",
     "react-router-config": "^5.1.1",
@@ -67,21 +66,20 @@
       "last 1 safari version"
     ]
   },
-  "lint-staged": {
-    "linters": {
-      "src/**/*.{js,jsx,ts,tsx,css,scss,json}": [
-        "prettier --write",
-        "eslint --ext=.tsx,.ts,.js,.jsx src --fix",
-        "git add"
-      ]
-    },
-    "ignore": [
-      "src/assets/*"
-    ]
-  },
+  // "lint-staged": {
+  //   "linters": {
+  //     "src/**/*.{js,jsx,ts,tsx,css,scss,json}": [
+  //       "pre-commit:lint",
+  //       "git add"
+  //     ]
+  //   },
+  //   "ignore": [
+  //     "src/assets/*"
+  //   ]
+  // },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "pre-commit:lint"
     }
   },
   "jest": {
