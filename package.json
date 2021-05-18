@@ -43,7 +43,7 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "format": "prettier --write .",
-    "lint": "eslint --ext=.tsx,.ts,.js,.jsx src --fix",
+    "lint": "eslint --ext=.tsx,.ts,.js,.jsx src",
     "docs:local": "gulp docs:local",
     "docs:release": "gulp docs:release"
   },
