@@ -28,8 +28,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "gulp": "^4.0.2",
     "gulp-jsdoc3": "^3.0.0",
+    "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
-    "pre-commit": "^1.2.2",
     "prettier": "^2.2.1",
     "react-router-config": "^5.1.1",
     "react-scripts": "3.4.0",
@@ -78,10 +78,11 @@
       "src/assets/*"
     ]
   },
-  "pre-commit": [
-    "lint-staged",
-    "lint"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "jest": {
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1"
