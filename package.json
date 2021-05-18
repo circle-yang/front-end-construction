@@ -46,7 +46,8 @@
     "lint": "eslint --ext=.tsx,.ts,.js,.jsx src --fix",
     "docs:local": "gulp docs:local",
     "docs:release": "gulp docs:release",
-    "pre-commit:lint": "yarn format && yarn lint"
+    "pre-commit:lint": "yarn format && yarn lint",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -66,17 +67,12 @@
       "last 1 safari version"
     ]
   },
-  // "lint-staged": {
-  //   "linters": {
-  //     "src/**/*.{js,jsx,ts,tsx,css,scss,json}": [
-  //       "pre-commit:lint",
-  //       "git add"
-  //     ]
-  //   },
-  //   "ignore": [
-  //     "src/assets/*"
-  //   ]
-  // },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,css,scss,json}": [
+      "pre-commit:lint",
+      "git add"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint"
