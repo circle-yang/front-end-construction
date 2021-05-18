@@ -45,7 +45,8 @@
     "format": "prettier --write .",
     "lint": "eslint --ext=.tsx,.ts,.js,.jsx src --fix",
     "docs:local": "gulp docs:local",
-    "docs:release": "gulp docs:release"
+    "docs:release": "gulp docs:release",
+    "pre-commit:lint": "yarn format && yarn lint"
   },
   "eslintConfig": {
     "extends": [
@@ -65,16 +66,10 @@
       "last 1 safari version"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn format && yarn lint",
-      "pre-push": "yarn lint"
-    }
-  },
-  // "pre-commit": [
-  //   "format",
-  //   "lint"
-  // ],
+  "pre-commit": [
+    "pre-commit:lint",
+    "lint"
+  ],
   "jest": {
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1"
