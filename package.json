@@ -70,7 +70,8 @@
   "lint-staged": {
     "linters": {
       "src/**/*.{js,jsx,ts,tsx,css,scss,json}": [
-        "pre-commit:lint",
+        "prettier --write",
+        "eslint --ext=.tsx,.ts,.js,.jsx src --fix",
         "git add"
       ]
     },
