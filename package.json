@@ -69,14 +69,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,css,scss,json}": [
-      "pre-commit:lint",
-      "git add"
+      "pre-commit:lint"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint"
-    }
   },
   "jest": {
     "moduleNameMapper": {

@@ -32,7 +32,7 @@ const App = inject("globalStore")(
         <IntlProvider locale={locale} messages={messages}>
           <div className="App">
             <Button type="primary">
-              {/* <FormattedMessage id="global.form.button.submit" /> */}
+              <FormattedMessage id="global.form.button.submit" />
               oooo
             </Button>
             <img src={cloud_login} alt="" style={{ width: 100, height: 100 }} />
