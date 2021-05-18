@@ -1,0 +1,128 @@
+@import "./base.module.scss";
+
+.columns {
+  display: flex;
+  flex-grow: 1;
+}
+
+.sideColumn {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin-right: 16px;
+}
+
+.mainColumn {
+  flex-grow: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.action {
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    color: $primary;
+  }
+}
+
+.disabled {
+  color: #bfbfbf !important;
+  cursor: not-allowed !important;
+  &:hover {
+    color: #bfbfbf !important;
+  }
+}
+
+.delete {
+  color: $error !important;
+  cursor: pointer;
+  &:hover {
+    color: #ff4d4f !important;
+  }
+}
+
+.drawerFormMain {
+  flex-grow: 1;
+  padding: 24px 48px !important;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTab {
+  overflow: visible;
+  :global {
+    .ant-tabs-nav {
+      margin-bottom: 0 !important;
+    }
+    .ant-tabs-tab {
+      background: transparent !important;
+    }
+    .ant-tabs-tab-active {
+      background: #fff !important;
+    }
+
+    .ant-tabs-tab {
+      border: 0 !important;
+    }
+
+    .ant-tabs-tab-btn {
+      font-size: 14px !important;
+    }
+  }
+}
+
+.actionCell {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+
+  :global {
+    .ant-btn-link:not([disabled]) {
+      color: $primary !important;
+
+      &:hover {
+        color: #69c0ff !important;
+      }
+    }
+
+    .ant-btn {
+      font-weight: 500;
+    }
+  }
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  color: #262626;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+
+.tipFormItem {
+  margin: 0 !important;
+
+  :global {
+    .ant-form-item-label {
+      padding-bottom: 4px !important;
+    }
+  }
+
+  .tip {
+    padding-bottom: 8px;
+    color: #bfbfbf;
+    display: inline-block;
+  }
+}
+
+.empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

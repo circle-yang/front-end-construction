@@ -1,0 +1,58 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "react-app",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "project": "tsconfig.json",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "root": true,
+  "rules": {
+    "no-console": "warn",
+    "no-self-assign": "warn",
+    "react-hooks/exhaustive-deps": "off",
+    "strict": ["error", "global"],
+    "no-useless-escape": "off",
+    "react/display-name": "off",
+    "react/no-children-prop": "off",
+    "react/prop-types": "off",
+    "no-return-await": "error",
+    "no-use-before-define": "error",
+    "no-extra-label": "error",
+    "no-floating-decimal": "error",
+    "no-param-reassign": "error",
+    "no-duplicate-imports": "error",
+    "prefer-arrow-callback": "error",
+    "prefer-const": "error",
+    "prefer-template": "error",
+    "eqeqeq": "error",
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".tsx", ".ts"] }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts?(x)", "src/**/*.js?(x)"]
+    }
+  ]
+}

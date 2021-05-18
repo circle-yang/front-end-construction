@@ -1,0 +1,23 @@
+cache:
+  paths:
+    - node_modules/
+
+run_format:
+  script:
+    - yarn
+    - yarn format
+
+run_lint:
+  script:
+    - yarn
+    - yarn lint
+
+run_build:
+  script:
+    - yarn
+    - yarn build
+
+run_docs:
+  script:
+    - yarn
+    - yarn docs:release
