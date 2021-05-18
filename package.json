@@ -28,6 +28,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "gulp": "^4.0.2",
     "gulp-jsdoc3": "^3.0.0",
+    "lint-staged": "^11.0.0",
     "pre-commit": "^1.2.2",
     "prettier": "^2.2.1",
     "react-router-config": "^5.1.1",
@@ -66,8 +67,19 @@
       "last 1 safari version"
     ]
   },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.{js,jsx,ts,tsx,css,scss,json}": [
+        "pre-commit:lint",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "src/assets/*"
+    ]
+  },
   "pre-commit": [
-    "pre-commit:lint",
+    "lint-staged",
     "lint"
   ],
   "jest": {
