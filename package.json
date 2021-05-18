@@ -43,7 +43,7 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "format": "prettier --write .",
-    "lint": "eslint --ext=.tsx,.ts,.js,.jsx src",
+    "lint": "eslint --ext=.tsx,.ts,.js,.jsx src --fix",
     "docs:local": "gulp docs:local",
     "docs:release": "gulp docs:release"
   },
@@ -65,10 +65,16 @@
       "last 1 safari version"
     ]
   },
-  "pre-commit": [
-    "format",
-    "lint"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format && yarn lint",
+      "pre-push": "yarn lint"
+    }
+  },
+  // "pre-commit": [
+  //   "format",
+  //   "lint"
+  // ],
   "jest": {
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1"
