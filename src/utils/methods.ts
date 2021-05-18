@@ -18,7 +18,7 @@ export default class Methods {
         str = key;
       }
     }
-    const [language] = value.split("-");
+    // const [language] = value.split("-");
     if (!str) {
       for (const key of values) {
         if (key.toLocaleLowerCase().includes(language)) {
