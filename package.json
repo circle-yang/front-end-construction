@@ -1,3 +1,5 @@
+
+
 {
   "name": "cra-craco",
   "version": "0.1.0",
@@ -17,6 +19,8 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "@craco/craco": "^5.6.4",
     "@types/jest": "^26.0.23",
     "@types/node": "^14.14.41",
@@ -47,7 +51,7 @@
     "docs:local": "gulp docs:local",
     "docs:release": "gulp docs:release",
     "pre-commit:lint": "yarn format && yarn lint",
-    "prepare": "husky install"
+    "postinstall": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -72,6 +76,9 @@
       "prettier --write",
       "yarn lint"
     ]
+  },
+  "commitlint":{
+    "extends": ["@commitlint/config-conventional"]
   },
   "jest": {
     "moduleNameMapper": {
